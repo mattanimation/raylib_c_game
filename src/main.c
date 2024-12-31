@@ -109,7 +109,7 @@ int main(void){
 	int i = 0;
 
 	for(i=0; i < fipRectLength; i++){
-	    falling_items_rect_pool[i] = (Rectangle){0,0, 64, -64};
+	    falling_items_rect_pool[i] = (Rectangle){0,-64, 64, 64};
 	}
 	float t = GetTime();
 	for(i=0; i < fipTimesLength; i++){
@@ -177,7 +177,7 @@ int main(void){
 				int i = 0;
 
 				for(i=0; i < fipRectLength; i++){
-				    falling_items_rect_pool[i] = (Rectangle){0,0, 64, -64};
+				    falling_items_rect_pool[i] = (Rectangle){0,-64, 64, 64};
 				}
 				float t = GetTime();
 				for(i=0; i < fipTimesLength; i++){
@@ -326,8 +326,8 @@ int main(void){
 			// { blink_color, blink_color, blink_color, 255}
 			float color_angle = (float)(120 + (sin(GetTime() * 10) * 120));
 			for(int i=0; i < fipRectLength; i++){
-			    printf("now: %f || item: %d, x: %f y: %f \n", GetTime(), i, falling_items_rect_pool[i].x, falling_items_rect_pool[i].y);
-                DrawRectangleRec(falling_items_rect_pool[i], RED); //ColorFromHSV(color_angle, 1, 1));
+			    printf("now: %f || item: %d, x: %f, y: %f, w: %f, h: %f, \n", GetTime(), i, falling_items_rect_pool[i].x, falling_items_rect_pool[i].y, falling_items_rect_pool[i].width, falling_items_rect_pool[i].height);
+                DrawRectangleRec(falling_items_rect_pool[i], ColorFromHSV(color_angle, 1, 1));
 			}
 
 
